@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+<body>
+    <script>
+        // Kode : Membuat Object dengan Object
+        const Sofyan = {
+            firstName : "Sofyan",
+            lastName : "Tanjung"
+        };
+
+        const Budi = {
+            firstName : "Budi",
+            lastName : "Nugraha"
+        };
+
+        // Cara lama pembuatan constructor, diawali dengan huruf besar P atau cemal case, mirip function biasa
+
+        // constructor function
+        function PremiumMember(){
+
+        }
+
+        // object nya menggunakan kata kunci new
+        const eko = new PremiumMember();
+        const budi = new PremiumMember();
+
+        // Property di constructor function
+        function Person(){
+            this.firstName = "";
+            this.lastName = "";
+        }
+
+        const Eko = new Person();
+        Eko.firstName = "Sofyan";
+        Eko.lastName = "Tanjung";
+        const budI = new Person();
+        budI.firstName = "Budi";
+        budI.lastName = "Nugraha";
+
+        console.info(Eko);
+        console.info(budI);
+    </script>
+</body>
+</html>

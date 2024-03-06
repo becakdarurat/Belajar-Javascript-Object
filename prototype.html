@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype</title>
+</head>
+<body>
+    <script>
+
+        function Person(firstName, lastName){
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.sayHello = function (name){
+                console.info(`Hello ${name} My Name is ${this.firstName}`);
+            }
+        }
+
+        const eko = new Person("Eko", "Khannedy");
+        // Kode : Menambah Property ke instance object
+        eko.sayBye = function (){
+            console.info("Good Bye");
+        }
+        
+        const budi = new Person("Budi", "Nugraha");
+
+
+        console.info(eko);
+        console.info(budi);
+
+        
+
+    </script>
+</body>
+</html>

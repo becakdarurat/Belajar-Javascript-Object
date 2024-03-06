@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Method atau function in object dulu</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        function Person(firstName = "Sofyan", lastName = "Tanjung"){
+            this.firstName = firstName;
+            this.lastName = lastName;
+            // function anonymous
+            this.sayHello = function(name){
+                console.info(`Hello ${name} My name is ${this.firstName} ${this.lastName}`);
+            }
+        }
+
+        const fullName = new Person();
+        fullName.sayHello("Brother");
+
+        const namaLengkap = new Person("Budi", "Nugraha");
+        namaLengkap.sayHello("Teman");
+    </script>
+</body>
+</html>

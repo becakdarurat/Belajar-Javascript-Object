@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pewarisan Class</title> 
+</head>
+<body>
+    <script>
+        class Employee {
+            // constructor(name){
+            //     this.name = name;
+            // }
+            sayHello(name){
+                console.info(`Hi ${name}, my name is Employee ${this.name}`);
+            }
+        }
+
+        // pewarisan menggunakan extends
+        class Manager extends Employee {
+            // constructor(name){
+            //     this.name = name;
+            // }
+            sayHello(name){
+                console.info(`Hi ${name}, my name is Manager ${this.name}`);
+            }
+        }
+
+        const budi = new Employee();
+        budi.name = "Budi";
+        budi.sayHello("Joko");
+
+        const Manager = new Manager();
+        Manager.name = "Manager";
+        Manager.sayHello("Joko");
+    </script>
+</body>
+</html>

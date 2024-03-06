@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype Salah</title>
+</head>
+<body>
+    <script>
+        // Kode : Prototype Inheritance Salah (1)
+        function Employee(name){
+            this.name = name;
+        }
+
+        function Manager(name){
+            this.name = name;
+        }
+
+        Manager.prototype = Employee.prototype;
+
+        Manager.prototype.sayHello = function(name){
+            console.info(`Hello ${name}, my name is Manager ${this.name}`);
+        }
+
+        Employee.prototype.sayHello = function(name){
+            console.info(`Hello ${name}, my name is Employee ${this.name}`);
+        }
+
+        // Kode : Prototype Inheritance Salah (2)
+        const employee = new Employee("Budi");
+        employee.sayHello("Joko")
+        const manager = new Manager("Eko");
+        manager.sayHello("Joko");
+
+
+        // Kode : Prototype Inheritance Benar (1)
+        function Karyawan(name){
+            this.name = name;
+        }
+
+        function Pimpinan(name){
+            this.name = name;
+        }
+
+        // arahkan dulu ke object Karyawan
+        Pimpinan.prototype = Object.create(Karyawan.prototype);
+
+        // baru kita tambahkan 
+        Pimpinan.prototype.sayHello = function (name){
+            console.info(`Hello ${name}, my name is Pimpinan ${this.name}`);
+        }
+
+        Karyawan.prototype.sayHello = function(name){
+            console.info(`Hello ${name}, my name is Karyawan ${this.name}`);
+        }
+
+        console.info(Karyawan);
+        console.info(Pimpinan);
+    </script>
+</body>
+</html>

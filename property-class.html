@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor , property</title>
+</head>
+<body>
+    <script>
+        class Person {
+            name = "Sibolga";
+            constructor(name){
+                this.name = name;
+                this.sayHello = function(){
+                    console.info(`Property function`);
+                }
+                console.info(`Hello ${name}, kamu tinggal di Kota ${this.name}`);
+            }
+        }
+
+        const eko = new Person("Eko Kurniawan");
+        console.info(eko);  
+    </script>
+</body>
+</html>
