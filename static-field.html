@@ -9,11 +9,18 @@
     <script>
         class Configuration {
 
+    // static nempel di class nya bukan di instance nya, bisa di aksess dari mana saja
             static name = "Belajar JavaScript Dasar";
             static version = 1.0;
             static author = "Sofyan Tanjung";
 
         }
+        const config = new Configuration();
+        console.info(config);
+
+        console.info(Configuration.name);
+        console.info(Configuration.version);
+        console.info(Configuration.author);
     </script>
 </body>
 </html>
