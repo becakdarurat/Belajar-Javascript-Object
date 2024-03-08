@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Hendling</title>
+</head>
+<body>
+    <script>
+        class MathUtil {
+            static sum(...numbers){
+                if (numbers.length === 0){
+                    throw new Error(`Total Parameter Harus lebih dari 0`);
+                }
+
+                let result = 0;
+                for(const number of numbers) {
+                    result += number;
+                }
+                return result;
+            }
+        }
+
+    // untuk menangkap error apabila terjadi error
+        try {
+            console.info(MathUtil.sum());
+            console.info(`Code Block Try akan berhenti`);
+        } catch (error){
+    // jika block trynya tidak terjadi error makan block catch tidak akan di eksekusi
+            console.info(`Terjadi Error : ${error.message}`);
+        } finally {
+    // Block ini akan selalu di eksekusi
+            console.info(`Kode Program Selesai`);
+        }
+
+        console.info(`Kode Program tidak akan berhenti`);
+
+
+
+
+// Kode : Trik jika tidak menggunakan catch, ini jarang di gunakan
+        class Counter {
+            constructor(){
+                this.value = 1;
+            }
+
+            next(){
+                try {
+                    return this.value;
+                } finally {
+                    this.value++;
+                }
+            }
+        }
+
+        const counter = new Counter();
+        console.info(counter.next());
+        console.info(counter.next());
+        console.info(counter.next());
+        console.info(counter.next());
+        console.info(counter.next());
+        
+        </script>
+</body>
+</html>
